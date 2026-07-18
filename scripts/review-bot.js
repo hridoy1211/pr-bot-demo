@@ -2,18 +2,17 @@ import { GoogleGenAI } from '@google/generative-ai';
 import fs from 'fs';
 import path from 'path';
 
-
 const apiKey = process.env.GEMINI_API_KEY;
 if (!apiKey) {
   console.error("Error: GEMINI_API_KEY is not set.");
   process.exit(1);
 }
 
+// এখানে GoogleGenAI ক্লাসটি সঠিকভাবে ব্যবহার করা হয়েছে
 const ai = new GoogleGenAI({ apiKey: apiKey });
 
 async function main() {
   try {
-    
     const filePath = path.join(process.cwd(), 'src', 'main', 'java', 'com', 'demo', 'bank', 'Account.java');
     
     if (!fs.existsSync(filePath)) {
@@ -25,7 +24,7 @@ async function main() {
 
     console.log("Sending code to Gemini for review...");
     
-    // Gemini 2.5 Flash বা লেটেস্ট ফ্রি মডেল ব্যবহার করা
+    // gemini-2.5-flash এর ফ্রি টায়ার সাপোর্ট
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
       contents: `You are a Senior Java Code Reviewer. Review the following code and point out bugs or logic issues briefly:\n\n${fileContent}`,
