@@ -29,7 +29,7 @@ jobs:
       - name: Run PR review bot
         env:
           # NEVER hardcode the key — it comes from the repo secret.
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_API_KEY: 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
           # GITHUB_TOKEN is injected automatically by Actions; the job's
           # `permissions` block above scopes it to read code + write PR comments.
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
