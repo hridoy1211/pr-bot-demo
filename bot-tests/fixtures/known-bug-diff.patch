@@ -1,0 +1,11 @@
+diff --git a/src/main/java/com/demo/bank/InterestCalculator.java b/src/main/java/com/demo/bank/InterestCalculator.java
+index 1111111..2222222 100644
+--- a/src/main/java/com/demo/bank/InterestCalculator.java
++++ b/src/main/java/com/demo/bank/InterestCalculator.java
+@@ -15,6 +15,7 @@ public class InterestCalculator {
+     private static final double GOLD_RATE = 0.03;
+
++    // Returns the annual interest for the given balance based on its tier.
+     public double calculateInterest(double balance) {
+         if (balance > 1000 && balance < 10000) {
+             return balance * SILVER_RATE;
