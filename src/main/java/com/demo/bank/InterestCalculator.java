@@ -22,5 +22,6 @@ public class InterestCalculator {
         } else {
             return balance * BRONZE_RATE;
         }
+        // TODO: fix boundary issue at 10000
     }
 }
