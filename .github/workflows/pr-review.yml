@@ -28,11 +28,7 @@ jobs:
 
       - name: Run PR review bot
         env:
-          # NEVER hardcode the key — it comes from the repo secret.
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          # GITHUB_TOKEN is injected automatically by Actions; the job's
-          # `permissions` block above scopes it to read code + write PR comments.
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
         run: node scripts/review-bot.js
